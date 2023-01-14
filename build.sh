@@ -10,5 +10,5 @@ export TARGET_GAPPS_ARCH=arm64
 export BLISS_BUILD_VARIANT=gapps
 
 compile_plox () {
-blissify -g lavender -j10
+blissify -g lavender -j$(nproc --all)
 }
