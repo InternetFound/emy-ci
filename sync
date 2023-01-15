@@ -26,9 +26,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 rm -rf hardware/qcom-caf/msm8998/media
 rm -rf hardware/qcom-caf/msm8998/display
 rm -rf hardware/qcom-caf/msm8998/audio
+rm -rf packages/resources/devicesettings
 git clone -b arrow-12.1-caf-msm8998 https://github.com/ArrowOS/android_hardware_qcom_display hardware/qcom-caf/msm8998/display
 git clone -b arrow-12.1-caf-msm8998 https://github.com/ArrowOS/android_hardware_qcom_media hardware/qcom-caf/msm8998/media
 git clone -b arrow-12.1-caf-msm8998 https://github.com/ArrowOS/android_hardware_qcom_audio hardware/qcom-caf/msm8998/audio
+git clone -b lineage-20.0 https://github.com/LineageOS/android_packages_resources_devicesettings packages/resources/devicesettings
 
 # tree
 git clone --depth=1 https://Prashant-1695:$my_og_token@github.com/Prashant-1695/device_xiaomi_lavender device/xiaomi/lavender -b corvus
