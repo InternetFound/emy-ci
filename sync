@@ -19,8 +19,8 @@ fi
 repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/wHo-EM-i/manifest.git --depth 1 -b crdroid .repo/local_manifests
 
-# Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j30 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j10
+# Sync source without unnecessary messages, try with -j16 first, if fails, it will try again
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j16 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j10
 
 # tree
 git clone --depth=1 https://wHo-EM-i:$my_og_token@github.com/wHo-EM-i/device_xiaomi_lavender -b T-4.19-WIP device/xiaomi/lavender
