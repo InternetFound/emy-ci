@@ -1,11 +1,11 @@
 # Normal build steps
 . build/envsetup.sh
-lunch bliss_lavender-userdebug
+lunch corvus_lavender-userdebug
 
 # export variable here
 export TZ=Asia/Kolkata
 export SELINUX_IGNORE_NEVERALLOWS=true
 
 compile_plox () {
-blissify -g lavender -j10
+make corvus -j10
 }
