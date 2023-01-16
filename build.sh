@@ -10,5 +10,5 @@ export TARGET_GAPPS_ARCH=arm64
 #export BLISS_BUILD_VARIANT=gapps
 
 compile_plox () {
-mka bacon -j16
+mka bacon -j32
 }
