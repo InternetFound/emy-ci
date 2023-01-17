@@ -27,8 +27,7 @@ git clone --depth=1 https://ImSpiDy:$my_og_token@github.com/ImSpiDy/device_xiaom
 git clone --depth=1 https://github.com/wHo-EM-i/android_vendor_xiaomi_lavender vendor/xiaomi/lavender -b T-CLO
 git clone --depth=1 https://github.com/projects-nexus/xtreme_kernel_lavender-4.4 kernel/xiaomi/lavender -b topaz
 
-rm -rf /tmp/rom/vendor/qcom/opensource/commonsys-intf/wfd
-rm -rf /tmp/rom/device/qcom/sepolicy-legacy-um
+rm -rf /tmp/rom/vendor/qcom/opensource/usb /tmp/rom/vendor/qcom/opensource/commonsys-intf/wfd /tmp/rom/device/qcom/sepolicy-legacy-um
 
 git clone --depth=1 https://github.com/wHo-EM-i/device_qcom_sepolicy-legacy-um-1 /tmp/rom/device/qcom/sepolicy-legacy-um -b sushi
 
@@ -42,8 +41,8 @@ git clone --depth=1 https://github.com/Nub-XD/android_hardware_qcom_media hardwa
 #echo "KERNEL_CUSTOM_LLVM := true" >> device/xiaomi/lavender/B*.mk
 
 # powerhint
-rm -rf vendor/qcom/opensource/power
-git clone --depth=1 https://github.com/Nub-XD/vendor_qcom_opensource_power vendor/qcom/opensource/power -b t
+rm -rf /tmp/rom/vendor/qcom/opensource/power
+git clone --depth=1 https://github.com/Nub-XD/vendor_qcom_opensource_power /tmp/rom/vendor/qcom/opensource/power -b t
 
 # patch
 #cd /tmp/rom/hardware/qcom/display && curl https://github.com/wHo-EM-i/android_hardware_qcom_display/commit/bbbf547753f8b7f88e86efe13cefbdce7c72c5fc.patch | git am
@@ -52,7 +51,7 @@ git clone --depth=1 https://github.com/Nub-XD/vendor_qcom_opensource_power vendo
 rm -rf /tmp/rom/vendor/qcom/opensource/commonsys/display/libqdmetadata
 #cd /tmp/rom/vendor/aospa && curl https://github.com/AOSPA/android_vendor_aospa/commit/15c966c916008187227054b024fbfe63e287483b.patch | git am
 #cd /tmp/rom/bionic && curl https://github.com/wHo-EM-i/bionic/commit/61ea0bc221c8ae7992b44c58302e23ab3e748742.patch | git am
-cd /tmp/rom/system/libhidl && curl https://github.com/ArrowOS/android_system_libhidl/commit/fbdf10a33f546d202ae12b4b864177fea9faa998.patch | git am
+#cd /tmp/rom/system/libhidl && curl https://github.com/ArrowOS/android_system_libhidl/commit/fbdf10a33f546d202ae12b4b864177fea9faa998.patch | git am
 cd /tmp/rom/device/qcom/common && sed -i 's|include device/qcom/sepolicy-legacy/SEPolicy.mk|-include device/qcom/sepolicy-legacy/SEPolicy.mk|' B*Qcom.mk
 #cd /tmp/rom/kernel/xiaomi/lavender && git fetch https://github.com/projects-nexus/android_xtreme_kernel_lavender -t topaz
 #git cherry-pick b1f2b0c7b5ecfb733c042a7b21d852807e40956e^..e6e8510bea413213412e077b1016df9d0980de6e
