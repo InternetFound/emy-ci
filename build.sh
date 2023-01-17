@@ -7,5 +7,5 @@ export TZ=Asia/Kolkata
 export SELINUX_IGNORE_NEVERALLOWS=true
 
 compile_plox () {
-make bacon -j16
+make bacon -j12
 }
