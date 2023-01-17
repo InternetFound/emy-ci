@@ -27,6 +27,7 @@ git clone --depth=1 https://ImSpiDy:$my_og_token@github.com/ImSpiDy/device_xiaom
 git clone --depth=1 https://github.com/wHo-EM-i/android_vendor_xiaomi_lavender vendor/xiaomi/lavender -b T-CLO
 git clone --depth=1 https://github.com/projects-nexus/xtreme_kernel_lavender-4.4 kernel/xiaomi/lavender -b topaz
 
+rm -rf /tmp/rom/vendor/qcom/opensource/commonsys-intf/wfd
 rm -rf /tmp/rom/device/qcom/sepolicy-legacy-um
 
 git clone --depth=1 https://github.com/wHo-EM-i/device_qcom_sepolicy-legacy-um-1 /tmp/rom/device/qcom/sepolicy-legacy-um -b sushi
