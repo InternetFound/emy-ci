@@ -23,6 +23,7 @@ git clone https://github.com/Prashant-1695/local_manifest.git --depth 1 -b shink
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j16 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j10
 
 #extras 
+rm -rf /tmp/rom/vendor/qcom/opensource/commonsys/display/libqdmetadata
 #rm -rf packages/resources/devicesettings
 #git clone -b lineage-20.0 https://github.com/LineageOS/android_packages_resources_devicesettings packages/resources/devicesettings
 
