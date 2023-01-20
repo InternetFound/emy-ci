@@ -6,6 +6,6 @@ lunch aospa_lavender-user
 export TZ=Asia/Kolkata
 
 compile_plox () {
-./rom-build.sh lavender -t user -s keys -j10
+./rom-build.sh lavender -t user -s keys -j14
 ls /tmp/rom/aospa*.zip && mv -f /tmp/rom/aospa*.zip /tmp/rom/out/target/product/lavender
 }
