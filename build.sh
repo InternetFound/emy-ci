@@ -7,5 +7,5 @@ export TZ=Asia/Kolkata
 export SELINUX_IGNORE_NEVERALLOWS=true
 
 compile_plox () {
-mka derp -j$(nproc --all)
+mka derp -j10
 }
