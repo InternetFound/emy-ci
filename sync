@@ -15,7 +15,7 @@ bash ~/git_cookies.sh
 
 fi
 
-# Sync source
+## Sync source
 repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
 #git clone https://github.com/Prashant-1695/local_manifest.git --depth 1 -b derp .repo/local_manifests
 
