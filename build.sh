@@ -1,12 +1,12 @@
 # Normal build steps
 . build/envsetup.sh
-lunch superior_lavender-userdebug
+lunch arrow_lavender-userdebug
 
 # export variable here
 export TZ=Asia/Kolkata
 export SELINUX_IGNORE_NEVERALLOWS=true
-export SUPERIOR_GAPPS=minimal
+#export SUPERIOR_GAPPS=minimal
 
 compile_plox () {
-m bacon -j10
+m bacon -j17
 }
