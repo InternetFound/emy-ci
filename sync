@@ -16,16 +16,17 @@ bash ~/git_cookies.sh
 fi
 
 ## Sync source
-repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Prashant-1695/local_manifest.git --depth 1 -b superior .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ImSpiDy/local_manifest.git --depth 1 -b rice-4.19 .repo/local_manifests
 
 # Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j10 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j10
 
 # trees
-git clone --depth=1 https://Prashant-1695:$my_og_token@github.com/Prashant-1695/device_xiaomi_lavender device/xiaomi/lavender -b 4.19
-git clone --depth=1 https://Prashant-1695:$my_og_token@github.com/Prashant-1695/android_vendor_xiaomi_lavender vendor/xiaomi/lavender -b 4.19
-git clone --depth=1 https://github.com/Prashant-1695/kernel_xiaomi_lavender-4.19 kernel/xiaomi/lavender -b CLO-2
+git clone --depth=1 https://ImSpiDy:$my_og_token@github.com/ImSpiDy/device_xiaomi_lavender-13 device/xiaomi/lavender -b T-4.19
+
+# clean
+rm -rf /tmp/rom/device/xiaomi/lavender/libhidl/Android.bp
 
 . /tmp/ci/function
 tg "$rom_name source sync completed!
