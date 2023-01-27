@@ -28,6 +28,10 @@ git clone --depth=1 https://ImSpiDy:$my_og_token@github.com/ImSpiDy/device_xiaom
 # clean
 rm -rf /tmp/rom/device/xiaomi/lavender/libhidl/Android.bp
 rm -rf /tmp/rom/kernel/xiaomi/lavender/techpack/audio/Android.bp
+rm -rf /tmp/rom/device/qcom/sepolicy-legacy-um
+
+# sepolicy
+git clone https://github.com/who-em-i/device_qcom_sepolicy-legacy-um-1 -b los-20 /tmp/rom/device/qcom/sepolicy-legacy-um
 
 . /tmp/ci/function
 tg "$rom_name source sync completed!
