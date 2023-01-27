@@ -27,6 +27,7 @@ git clone --depth=1 https://ImSpiDy:$my_og_token@github.com/ImSpiDy/device_xiaom
 
 # clean
 rm -rf /tmp/rom/device/xiaomi/lavender/libhidl/Android.bp
+rm -rf /tmp/rom/kernel/xiaomi/lavender/techpack/audio/Android.bp
 
 . /tmp/ci/function
 tg "$rom_name source sync completed!
