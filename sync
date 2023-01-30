@@ -23,7 +23,7 @@ git clone https://github.com/wHo-EM-i/manifest.git --depth 1 -b derp .repo/local
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j16 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j10
 
 # tree
-git clone --depth=1 https://wHo-EM-i:$my_og_token@github.com/wHo-EM-i/device_xiaomi_lavender -b T-4.19-WIP device/xiaomi/lavender
+git clone --depth=1 https://wHo-EM-i:$my_og_token@github.com/wHo-EM-i/device_xiaomi_lavender -b T-4.19-test device/xiaomi/lavender
 rm -rf /tmp/rom/device/xiaomi/lavender/libhidl
 #sed -i 's/CONFIG_LLVM_POLLY=y/# CONFIG_LLVM_POLLY is not set/' kernel/xiaomi/sdm660/arch/arm64/configs/lavender_defconfig
 #git clone --depth=1 https://gitlab.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r433403b.git -b 12.0 prebuilts/clang/host/linux-x86/clang-r433403b
