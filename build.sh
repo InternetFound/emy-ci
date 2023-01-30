@@ -17,5 +17,5 @@ export TARGET_GAPPS_ARCH=arm64
 }
 
 compile_plox () {
-m bacon -j17
+m bacon -j12
 }
