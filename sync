@@ -17,21 +17,21 @@ fi
 
 ## Sync source
 repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ImSpiDy/local_manifest.git --depth 1 -b Arrow-4.19 .repo/local_manifests
+git clone https://github.com/ImSpiDy/local_manifest.git --depth 1 -b 4.4 .repo/local_manifests
 
 # Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j10 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j10
 
 # trees
-git clone --depth=1 https://ImSpiDy:$my_og_token@github.com/ImSpiDy/device_xiaomi_lavender-13 device/xiaomi/lavender -b T-4.19
+git clone --depth=1 https://ImSpiDy:$my_og_token@github.com/ImSpiDy/device_xiaomi_lavender-13 device/xiaomi/lavender -b arrow
 
 # clean
 rm -rf /tmp/rom/device/xiaomi/lavender/libhidl/Android.bp
-rm -rf /tmp/rom/kernel/xiaomi/lavender/techpack/audio/Android.bp
-rm -rf /tmp/rom/device/qcom/sepolicy-legacy-um
+#rm -rf /tmp/rom/kernel/xiaomi/lavender/techpack/audio/Android.bp
+#rm -rf /tmp/rom/device/qcom/sepolicy-legacy-um
 
 # sepolicy
-git clone https://github.com/who-em-i/device_qcom_sepolicy-legacy-um-1 -b los-20 /tmp/rom/device/qcom/sepolicy-legacy-um
+#git clone https://github.com/who-em-i/device_qcom_sepolicy-legacy-um-1 -b los-20 /tmp/rom/device/qcom/sepolicy-legacy-um
 
 . /tmp/ci/function
 tg "$rom_name source sync completed!
