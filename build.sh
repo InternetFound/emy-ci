@@ -15,5 +15,5 @@ export BLISS_BUILD_VARIANT=gapps
 }
 
 compile_plox () {
-mka bacon -j10
+mka blissify -j10
 }
