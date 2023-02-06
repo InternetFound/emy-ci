@@ -17,19 +17,23 @@ fi
 
 # Sync source
 repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b topaz -g default,-mips,-darwin,-notdefault
-git clone https://github.com/wHo-EM-i/manifest.git --depth 1 -b topaz .repo/local_manifests
+git clone https://github.com/wHo-EM-i/manifest.git --depth 1 -b topaz-4.19 .repo/local_manifests
 
 # Sync source without unnecessary messages, try with -j16 first, if fails, it will try again
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j16 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j10
 
 # tree
-git clone --depth=1 https://wHo-EM-i:$my_og_token@github.com/wHo-EM-i/device_xiaomi_lavender -b topaz device/xiaomi/lavender
+git clone --depth=1 https://wHo-EM-i:$my_og_token@github.com/wHo-EM-i/device_xiaomi_lavender -b topaz-4.19 device/xiaomi/lavender
+
+#clo-kernel
+mv -f /tmp/rom/kernel/msm-4.19/Androidbp /tmp/rom/kernel/msm-4.19/Android.bp
+mv -f /tmp/rom/kernel/msm-4.19/techpack/audio/Androidbp /tmp/rom/kernel/msm-4.19/techpack/audio/Android.bp
 
 #test
-echo "KERNEL_CUSTOM_LLVM := true" >> device/xiaomi/lavender/B*.mk
+#echo "KERNEL_CUSTOM_LLVM := true" >> device/xiaomi/lavender/B*.mk
 
 # patch
-cd /tmp/rom/hardware/qcom/display && curl https://github.com/wHo-EM-i/android_hardware_qcom_display/commit/bbbf547753f8b7f88e86efe13cefbdce7c72c5fc.patch | git am
+#cd /tmp/rom/hardware/qcom/display && curl https://github.com/wHo-EM-i/android_hardware_qcom_display/commit/bbbf547753f8b7f88e86efe13cefbdce7c72c5fc.patch | git am
 #cd /tmp/rom/vendor/qcom/opensource/commonsys-intf/display && curl https://github.com/wHo-EM-i/vendor-qcom-opensource-display-commonsys-intf/commit/1ebc3b7c336ad5e7c11ca9ce1130032aa3928151.patch | git am
 #cd /tmp/rom/vendor/qcom/opensource/commonsys/display && curl https://github.com/wHo-EM-i/vendor-qcom-opensource-display-commonsys/commit/1265649c6373b750b394bd91a8a91ebb9c03bb45.patch | git am
 rm -rf /tmp/rom/vendor/qcom/opensource/commonsys/display/libqdmetadata
@@ -40,7 +44,7 @@ cd /tmp/rom/system/libhidl && curl https://github.com/ArrowOS/android_system_lib
 #cd /tmp/rom/kernel/xiaomi/lavender && git fetch https://github.com/projects-nexus/android_xtreme_kernel_lavender -t topaz
 #git cherry-pick b1f2b0c7b5ecfb733c042a7b21d852807e40956e^..e6e8510bea413213412e077b1016df9d0980de6e
 #git cherry-pick 29f9a3fb5442aadbb5417c18966722c594d6d910
-cp -vf /tmp/rom/device/xiaomi/lavender/configs/perf/*.xml /tmp/rom/device/qcom/common/vendor/perf/configs/sdm660/perf
+#cp -vf /tmp/rom/device/xiaomi/lavender/configs/perf/*.xml /tmp/rom/device/qcom/common/vendor/perf/configs/sdm660/perf
 
 . /tmp/ci/function
 tg "$rom_name source sync completed!
