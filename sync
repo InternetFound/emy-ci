@@ -31,6 +31,7 @@ mv -f /tmp/rom/kernel/msm-4.19/techpack/audio/Androidbp /tmp/rom/kernel/msm-4.19
 
 #test
 #echo "KERNEL_CUSTOM_LLVM := true" >> device/xiaomi/lavender/B*.mk
+echo "SELINUX_IGNORE_NEVERALLOWS := true" >> device/xiaomi/lavender/B*.mk
 
 # patch
 rm -rf /tmp/rom/hardware/qcom/display/display-commonsys-intf
