@@ -16,7 +16,7 @@ bash ~/git_cookies.sh
 fi
 
 # Sync source
-repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-CAF/xd_manifest -b eleven -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Xdroid-Caf-Lmi/xd_manifest -b eleven -g default,-mips,-darwin,-notdefault
 #git clone https://github.com/wHo-EM-i/manifest.git --depth 1 -b arrow-4.19 .repo/local_manifests
 
 # Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
@@ -32,8 +32,7 @@ git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.4 kernel
 git clone --depth=1 https://gitlab.com/Project-Nexus/nexus-clang.git -b nexus-14 /tmp/rom/prebuilts/clang/host/linux-x86/nexus-clang
 
 # fwb
-rm -rf /tmp/rom/frameworks/base
-git clone --depth=1 https://github.com/Xdroid-Caf-Lmi/xd_frameworks_base /tmp/rom/frameworks/base -b eleven
+cd /tmp/rom/frameworks/base && git revert --no-commit 47c350a110e3a4a0d30c2909cd069bcc97afb025
 
 # patch
 #cd /tmp/rom/system/libhidl && curl https://github.com/ArrowOS/android_system_libhidl/commit/fbdf10a33f546d202ae12b4b864177fea9faa998.patch | git am
