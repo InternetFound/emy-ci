@@ -28,6 +28,9 @@ git clone --depth=1 https://github.com/xenxynon/xd_vt vendor/xiaomi/lavender -b 
 git clone --depth=1 https://github.com/ImSpiDy/kernel_xiaomi_lavender-4.4 kernel/xiaomi/lavender -b qti-oldcam
 #git clone --depth=1 https://github.com/LineageOS/android_hardware_lineage_livedisplay hardware/lineage/livedisplay -b lineage-17.1
 
+# clang
+git clone --depth=1 https://gitlab.com/Project-Nexus/nexus-clang.git -b nexus-14 /tmp/rom/prebuilts/clang/host/linux-x86/nexus-clang
+
 # fwb
 rm -rf /tmp/rom/frameworks/base
 git clone --depth=1 https://github.com/Xdroid-Caf-Lmi/xd_frameworks_base /tmp/rom/frameworks/base -b eleven
