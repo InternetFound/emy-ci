@@ -25,6 +25,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 #clang
 #git clone --depth=1 -b nexus-14 https://gitlab.com/Project-Nexus/nexus-clang.git prebuilts/clang/host/linux-x86/clang-nexus
 
+#extras
+rm -rf packages/resources/devicesettings
+git clone -b lineage-20.0 https://github.com/LineageOS/android_packages_resources_devicesettings packages/resources/devicesettings
+
 # tree
 git clone --depth=1 https://Prashant-1695:$my_og_token@github.com/Prashant-1695/device_xiaomi_lavender device/xiaomi/lavender -b boot
 git clone --depth=1 https://Prashant-1695:$my_og_token@github.com/Prashant-1695/android_vendor_xiaomi_lavender vendor/xiaomi/lavender -b 13-4.4
