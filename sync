@@ -29,8 +29,10 @@ git clone --depth=1 https://github.com/projects-nexus/xtreme_kernel_lavender-4.4
 git clone --depth=1 https://github.com/LineageOS/android_hardware_lineage_livedisplay hardware/lineage/livedisplay -b lineage-17.1
 git clone --depth=1 https://github.com/Nub-XD/android_packages_apps_Dirac packages/apps/Dirac -b 10
 git clone --depth=1 https://github.com/Nub-XD/platform_vendor_lawnchair vendor/lawnchair -b 10
+git clone --depth=1 https://gitlab.com/Project-Nexus/nexus-clang.git prebuilts/clang/host/linux-x86/nexus-clang -b nexus-14
 
 # patch
+cd /tmp/rom/kernel/xiaomi/lavender && curl https://github.com/Nokia-SDM660/android_kernel_nokia_FIH-MSM8998/commit/ea0853c2cf16b659a5b54d9d3579c3352c510abf.patch | git am
 #cd /tmp/rom/system/libhidl && curl https://github.com/ArrowOS/android_system_libhidl/commit/fbdf10a33f546d202ae12b4b864177fea9faa998.patch | git am
 #cd /tmp/rom/device/qcom/common && curl https://github.com/wHo-EM-i/android_device_qcom_common/commit/b3a612e836ddf3e9ac766612ee4bd9194b681c95.patch | git am
 #cd /tmp/rom/bionic && curl https://github.com/wHo-EM-i/bionic/commit/61ea0bc221c8ae7992b44c58302e23ab3e748742.patch | git am
