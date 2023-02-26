@@ -1,6 +1,6 @@
 # Normal build steps
 . build/envsetup.sh
-lunch derp_lavender-userdebug
+lunch aosp_lavender-userdebug
 
 # export variable here
 export TZ=Asia/Kolkata
